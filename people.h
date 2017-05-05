@@ -12,11 +12,6 @@ typedef struct {
     char departure_time[STR_SIZE];
     char presence_of_transplants[STR_SIZE];
     int kids;
-} people;
-
-int  people_read_txt(people *s, FILE *in);
-void people_write_bin(people *s, FILE *out);
-void people_print(people *s);
-void people_write_txt(people *s, FILE *file);
+} People;
 
 #endif

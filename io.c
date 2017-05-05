@@ -2,8 +2,10 @@
 #include <stdlib.h>
 
 #include "people.h"
+#include "io.h"
 
-int people_read_txt(people *s, FILE *in)
+
+int People_read_txt(People *s, FILE *in)
 {
     fscanf(in, "%s", &(s->surname));
     fscanf(in, "%s", &(s->initials));
@@ -17,7 +19,7 @@ int people_read_txt(people *s, FILE *in)
     return !feof(in);
 }
 
-void people_write_txt(people *s, FILE *file)
+void People_write_txt(People *s, FILE *file)
 {
     fprintf(file, "%s ", s->surname);
     fprintf(file, "%s ", s->initials);
@@ -29,7 +31,7 @@ void people_write_txt(people *s, FILE *file)
     fprintf(file, "%d \n", s->kids);
 }
 
-int people_read_bin(people *s, FILE *in)
+int People_read_bin(People *s, FILE *in)
 {
     fread(s->surname,  sizeof(char), STR_SIZE, in);
     fread(s->initials, sizeof(char), STR_SIZE, in);
@@ -44,7 +46,7 @@ int people_read_bin(people *s, FILE *in)
     return !feof(in);
 }
 
-void people_write_bin(people *s, FILE *out)
+void People_write_bin(People *s, FILE *out)
 {
     fwrite(s->surname,  sizeof(char), STR_SIZE, out);
     fwrite(s->initials, sizeof(char), STR_SIZE, out);
@@ -57,7 +59,7 @@ void people_write_bin(people *s, FILE *out)
 
 }
 
-void people_print(people *s)
+void People_print(People *s)
 {
     printf("Name: %s %s\n", s->surname, s->initials);
     printf("Weight: %s\n", s->weight);
