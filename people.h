@@ -10,7 +10,7 @@ typedef struct {
     int quantity;
     char destination[STR_SIZE];
     char departure_time[STR_SIZE];
-    char presence_of_transplants[STR_SIZE];
+    char presence_of_transfers[STR_SIZE];
     int kids;
 } People;
 
